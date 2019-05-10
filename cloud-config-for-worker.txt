@@ -1,0 +1,24 @@
+#cloud-config
+
+apt_update: false
+apt_upgrade: false
+
+#login as root
+disable_root: false
+
+#install softwares
+packages:
+# - rabbitmq-server
+# - zookeeper
+# - protobuf-compiler
+ - python-pip
+ - git-core
+
+#install pika software with pip
+runcmd:
+ - [pip,install,pika]
+
+#turn off apt-get upgrade and update
+#apt_upgrade: false
+#apt_update: false
+
